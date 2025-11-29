@@ -9,8 +9,8 @@ import 'package:test_video_player/ui/ui_models/video_models/video_slider.dart';
 import 'package:test_video_player/video_player_icons_icons.dart';
 
 class VideoPage extends StatelessWidget {
-  const VideoPage({super.key});
-
+  const VideoPage({super.key, required this.isFullScreen});
+  final bool isFullScreen;
   Future<void> _goFullScreen() async {
     await SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeLeft,
@@ -45,10 +45,11 @@ class VideoPage extends StatelessWidget {
                         size: 14.77,
                       ),
                       SizedBox(width: 12),
-                      EntitiesIcon(
-                        onPressed: _goFullScreen,
-                        icon: VideoPlayerIcons.bigscreen,
-                      ),
+                      if (!isFullScreen)
+                        EntitiesIcon(
+                          onPressed: _goFullScreen,
+                          icon: VideoPlayerIcons.bigscreen,
+                        ),
                     ],
                   ),
                 ),
