@@ -5,3 +5,5 @@ sealed class VideoNavEvent {}
 class ShowNavEvent extends VideoNavEvent {}
 
 class DissapeareNavEvent extends VideoNavEvent {}
+
+class PlayNavEvent extends VideoNavEvent {}

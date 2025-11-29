@@ -3,11 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_video_player/bloc/settings_bloc/settings_bloc.dart';
 import 'package:test_video_player/ui/pages/fullscreen_video_page.dart';
 import 'package:test_video_player/ui/pages/portrait_video_page.dart';
-import 'package:test_video_player/ui/ui_models/like_or_dislike_icon.dart';
-import 'package:test_video_player/ui/ui_models/entities_icon.dart';
-import 'package:test_video_player/ui/ui_models/switch_theme.dart';
-import 'package:test_video_player/ui/pages/video_page.dart';
-import 'package:test_video_player/video_player_icons_icons.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
