@@ -7,3 +7,8 @@ class VideoInitEvent extends VideoEvent {}
 class VideoPlayEvent extends VideoEvent {}
 
 class VideoDateEvent extends VideoEvent {}
+
+class VideoPositionChanged extends VideoEvent {
+  final Duration position;
+  VideoPositionChanged(this.position);
+}
