@@ -1,16 +1,47 @@
-# test_video_player
+# Video Player
 
-A new Flutter project.
+Небольшое Flutter-приложение с видеоплеером на базе `video_player` и управлением состоянием через `flutter_bloc`.
 
-## Getting Started
+## Возможности
 
-This project is a starting point for a Flutter application.
+- Загрузка данных о видео из `MockVideoApi` (url, title, description)
+- Воспроизведение/пауза
+- Слайдер перемотки (seek)
+- Mute / Unmute
+- Скрывающаяся панель навигации (авто-скрытие через 1 секунду после play)
+- Поддержка портретной и ландшафтной ориентации
+- Полноэкранный режим (переход в landscape)
+- Переключение темы (Light/Dark) из settings-панели
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshots
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<p align="center">
+  <img src="screenshots/portrait.png" width="250" />
+</p>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p align="center">
+<img src="screenshots/landscape.png" width="450" />
+</p>
+
+## Стек
+
+- Flutter
+- `flutter_bloc` / `bloc`
+- `video_player`
+- `google_fonts`
+
+## Архитектура и основные Bloc
+
+### DataBloc
+Отвечает за загрузку видео-модели из API.
+### VideoBloc
+Отвечает за play/pause, обновление текущей позиции (приходит из контроллера)
+### VideoNavBloc
+Отвечает за показ/скрытие центральной панели управления (play/back/next)
+
+### ThemeBloc
+Переключение темы
+### SettingsBloc
+Открытие/закрытие панели настроек:
+### VolumeBloc
+Mute/unmute
